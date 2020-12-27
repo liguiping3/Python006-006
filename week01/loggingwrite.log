@@ -1,0 +1,14 @@
+#-*- coding:utf-8 -*-
+
+import time
+import sys
+import logging
+
+def print_log():
+    current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    print(current_time)
+    logging.basicConfig(filename='E:/log/write20201227.log',filemode="a",format="%(asctime)s",datefmt="%Y-%m-%d %H:%M:%S",level=logging.INFO)
+    logging.info("now time is")
+
+if __name__ =='__main__':
+    print_log()
