@@ -1,0 +1,11 @@
+修改配置文件my.cnf
+[client]
+default_character_set = utf8mb4
+[mysql]
+default_character_set = utf8mb4
+[mysqld]
+character_set_server = utf8mb4
+查看字符集
+show variables like 'character%';
+增加远程用户
+grant all on testdb.* to testuser@'%' identified by 'testpwd';
