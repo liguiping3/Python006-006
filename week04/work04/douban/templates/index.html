@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>豆瓣影评</title>
+</head>
+<body>
+<div class="container">
+    <h3 class="mt-5 mb-3">电影名称：拆弹专家2</h3>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">短评({{ count }}条)</th>
+            <th scope="col" class="text-nowrap">星级</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if results %}
+        {% for rst in results %}
+        <tr>
+            <th>{{ rst.id }}</th>
+            <td>{{ rst.content }}</td>
+            <td>{{ rst.stars }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <th></th>
+            <td>没有查询到相关内容</td>
+            <td></td>
+        </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
