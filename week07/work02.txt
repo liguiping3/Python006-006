@@ -1,0 +1,20 @@
+"""
+×Ô¶¨Òåmap
+"""
+
+
+def mapfun(func, *iterators):
+    try:
+        i = 0
+        while 1:
+            yield func(*[j[i] for j in iterators])
+            i += 1
+    except IndexError:
+        pass
+
+
+if __name__ == '__main__':
+    f = lambda x, y, z, w: x == y
+    a = [1, 2, 44, 4, 5, 6, 7, 8, 9]
+    b = [1, 2, 3, 4, 11, 6, 7, 8, 9]
+    print(list(mapfun(f, a, b, a, b)))

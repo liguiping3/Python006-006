@@ -1,0 +1,32 @@
+import time
+import logging
+from functools import wraps
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
+def timer(func):
+    @wraps(func)
+    def inner(*args, **kwargs):
+        logger.info(f"start execute function {func.__name__}.")
+        start_time = time.time()
+        ret = func(*args, **kwargs)
+        end_time = time.time()
+        cost_time = end_time - start_time
+        logger.info(f"execute function {func.__name__} end; cost time: {cost_time}s")
+
+        return ret
+
+    return inner
+
+
+@timer
+def my_fun():
+    time.sleep(1)
+
+
+if __name__ == '__main__':
+    my_fun()
+    print("main run")
+
