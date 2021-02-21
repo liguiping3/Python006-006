@@ -22,11 +22,11 @@ def timer(func):
 
 
 @timer
-def my_fun():
+def my_fun(*args, **kwargs):
     time.sleep(1)
 
 
 if __name__ == '__main__':
-    my_fun()
+    my_fun(x=1, y=2)
     print("main run")
 
