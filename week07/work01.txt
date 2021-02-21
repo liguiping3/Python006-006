@@ -1,0 +1,19 @@
+作业一：
+
+区分以下类型哪些是容器序列哪些是扁平序列，哪些是可变序列哪些是不可变序列：
+
+list
+tuple
+str
+dict
+collections.deque
+
+
+容器序列：list、tuple、collections.deque、dict （能存放不同类型的数据）  
+
+扁平序列：str（只能容纳一种类型）
+          另外视频中的bytes、bytearray、memoryview、array.array都是扁平序列
+
+可变序列：list、dict、collections.deque
+
+不可变序列：tuple、str
